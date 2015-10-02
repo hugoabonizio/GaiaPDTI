@@ -8,5 +8,6 @@
   
   ['GET', '/documents', 'document#index'],
   ['GET', '/documents/new', 'document#initialize'],
-  ['POST', '/documents/create', 'document#create']
+  ['POST', '/documents/create', 'document#create'],
+  ['GET', '/documents/:id', 'document#show']
 ]);

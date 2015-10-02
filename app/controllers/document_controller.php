@@ -18,4 +18,8 @@ class DocumentController extends ApplicationController {
       $this->redirect('/documents');
     }
   }
+  
+  function show() {
+    $this->document = Document::find($this->params('id'));
+  }
 }
