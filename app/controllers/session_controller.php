@@ -3,6 +3,8 @@ class SessionController extends ApplicationController {
   function login() {
     if ($_SESSION['signed_in']) {
       $this->redirect('/organizations');
+    } else {
+      $this->layout('default');
     }
   }
   

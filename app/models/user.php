@@ -3,4 +3,4 @@ class User extends \TORM\Model {
 
 }
 
-User::hasMany('organizations');
+User::belongsTo('organization');

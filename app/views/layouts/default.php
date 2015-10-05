@@ -11,7 +11,7 @@
     <![endif]-->
   </head>
   <body>
-    <?php include '_nav_organization.php'; ?>
+    <?php include '_nav_admin.php'; ?>
     <?= $yield; ?>
   </body>
 </html>

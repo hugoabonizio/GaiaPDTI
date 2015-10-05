@@ -3,5 +3,5 @@ class Organization extends \TORM\Model {
 
 }
 
-Organization::belongsTo('user');
+Organization::hasMany('user');
 Organization::hasMany('documents');

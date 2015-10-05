@@ -1,7 +1,8 @@
 <?php
-class OrganizationController extends ApplicationController {
+class OrganizationController extends AuthenticateController {
   function index() {
-    $this->organizations = User::find($_SESSION['user_id'])->organizations;
+    $this->layout('default');
+    $this->organizations = array(0 => User::find($_SESSION['user_id'])->organization);
   }
   
   function select() {
