@@ -1,6 +1,15 @@
-.btn-success {
-  background: #4CAF50;
+.footer {
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #E5E5E5;
+  color: #818181;
 }
+
+.btn-success { background: #4CAF50; }
+.btn-danger { background: #F34235; }
 
 .navbar-default {
   background-color: #2b85c4;

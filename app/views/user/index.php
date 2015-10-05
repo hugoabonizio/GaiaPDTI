@@ -1,23 +1,22 @@
 <div class="container" style="margin-top:70px">
-  <h1>Organizações</h1>
+  <h1>Usuários</h1>
   <table class="table table-bordered table-hover" style="margin-top:20px">
     <thead>
       <tr>
         <th>Nome</th>
+        <th>Organização</th>
         <th>Ação</th>
       </tr>
     </thead>
-    <?php foreach ($organizations as $organization): ?>
+    <?php foreach ($users as $user): ?>
       <tr>
-        <td class="col-md-8">
-          <a href="/organizations/select?organization_id=<?= $organization->id; ?>">
-            <?= $organization->name; ?>
-          </a>
+        <td class="col-md-5">
+          <?= $user->name; ?>
         </td>
         <td class="col-md-4">
-          <a class="btn btn-default btn-success" href="/organizations/select?organization_id=<?= $organization->id; ?>">
-            <i class="glyphicon glyphicon-share"></i> Entrar
-          </a>
+          <?= $user->organization->name; ?>
+        </td>
+        <td class="col-md-3">
           <a class="btn btn-default btn-warning" href="/organization/id/edit">
             <i class="glyphicon glyphicon-edit"></i> Editar
           </a>

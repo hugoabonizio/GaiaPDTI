@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Gaia PDTI</a>
+      <a class="navbar-brand" href="#"><strong>Gaia PDTI</strong></a>
     </div>
     <?php if ($current_user->is_admin): ?>
     <div id="navbar" class="navbar-collapse collapse">

@@ -13,5 +13,8 @@
   <body>
     <?php include '_nav_admin.php'; ?>
     <?= $yield; ?>
+    <footer class="footer">
+      GAIA - Soluções em TIC.
+    </footer>
   </body>
 </html>
