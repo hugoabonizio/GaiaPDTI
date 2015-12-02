@@ -18,10 +18,10 @@
           <a class="btn btn-default btn-success" href="/organizations/select?organization_id=<?= $organization->id; ?>">
             <i class="glyphicon glyphicon-share"></i> Entrar
           </a>
-          <a class="btn btn-default btn-warning" href="/organization/id/edit">
+          <a class="btn btn-default btn-warning" href="/organization/<?= $organization->id; ?>/edit">
             <i class="glyphicon glyphicon-edit"></i> Editar
           </a>
-          <a class="btn btn-default btn-danger" href="/organization/id/destroy">
+          <a class="btn btn-default btn-danger" href="/organization/<?= $organization->id; ?>/destroy">
             <i class="glyphicon glyphicon-remove"></i> Remover
           </a>
         </td>

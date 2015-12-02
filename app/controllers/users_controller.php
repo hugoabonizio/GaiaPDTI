@@ -15,7 +15,6 @@ class UsersController extends AuthenticateController {
   
   function create() {
     $user = new User;
-    print_r($_POST);
     foreach (['name', 'email', 'password', 'organization_id', 'is_admin'] as $attr) {
       $user->$attr = $_POST[$attr];
     }

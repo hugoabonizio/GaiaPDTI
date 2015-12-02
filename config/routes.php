@@ -3,8 +3,8 @@
 	['GET', '/', 'session#login'],
   ['POST', '/', 'session#create'],
   
-  ['RESOURCES', 'organizations'],
   ['GET', '/organizations/select', 'organizations#select'],
+  ['RESOURCES', 'organizations'],
   
   ['GET', '/documents', 'document#index'],
   ['GET', '/documents/new', 'document#initialize'],
