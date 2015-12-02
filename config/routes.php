@@ -11,5 +11,5 @@
   ['POST', '/documents/create', 'document#create'],
   ['GET', '/documents/:id', 'document#show'],
   
-  ['GET', '/users', 'user#index']
+  ['RESOURCES', 'users']
 ]);

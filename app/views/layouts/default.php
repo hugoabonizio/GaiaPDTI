@@ -12,7 +12,9 @@
   </head>
   <body>
     <?php include '_nav_admin.php'; ?>
-    <?= $yield; ?>
+    <div class="container" style="margin-top: 80px;">
+      <?= $yield; ?>
+    </div>
     <footer class="footer">
       GAIA - Soluções em TIC.
     </footer>
