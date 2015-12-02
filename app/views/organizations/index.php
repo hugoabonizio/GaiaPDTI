@@ -31,7 +31,7 @@
   
   <div class="row">
     <div class="col-md-12">
-      <a href="/users/new" class="btn btn-primary btn-lg pull-right">
+      <a href="/organizations/add" class="btn btn-primary btn-lg pull-right">
         <i class="glyphicon glyphicon-plus"></i>
       </a>
     </div>

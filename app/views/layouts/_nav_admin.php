@@ -9,13 +9,13 @@
       </button>
       <a class="navbar-brand" href="#"><strong>Gaia PDTI</strong></a>
     </div>
-    <?php if ($current_user->is_admin): ?>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li><a href="/organizations">Organizações</a></li>
-        <li><a href="/users">Usuários</a></li>
-      </ul>
-    </div><!--/.nav-collapse -->
+    <?php if (isset($current_user) and $current_user->is_admin): ?>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/organizations">Organizações</a></li>
+          <li><a href="/users">Usuários</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
     <?php endif; ?>
   </div>
 </nav>
