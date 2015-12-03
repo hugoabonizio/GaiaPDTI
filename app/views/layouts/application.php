@@ -11,7 +11,12 @@
     <![endif]-->
   </head>
   <body>
-    <?php include '_nav_organization.php'; ?>
-    <?= $yield; ?>
+    <?php include '_nav_document.php'; ?>
+    <div class="container" style="margin-top: 80px;">
+      <?= $yield; ?>
+    </div>
+    
+    <script src="/public/js/jquery.min.js"></script>
+    <script src="/public/js/bootstrap.min.js"></script>
   </body>
 </html>
