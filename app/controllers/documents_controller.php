@@ -1,10 +1,15 @@
 <?php
-class DocumentController extends ApplicationController {
+class DocumentsController extends ApplicationController {
+  function before_action() {
+    parent::before_action();
+    $this->layout('default');
+  }
+  
   function index() {
     $this->documents = Organization::find($_SESSION['organization_id'])->documents;
   }
   
-  function initialize() {
+  function add() {
   }
   
   function create() {
@@ -20,6 +25,12 @@ class DocumentController extends ApplicationController {
   }
   
   function show() {
+    $this->layout('application');
+    $_SESSION['document_id'] = $this->params('id');
     $this->document = Document::find($this->params('id'));
+  }
+  
+  function sections() {
+    $this->layout('application');
   }
 }

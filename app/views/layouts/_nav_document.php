@@ -11,9 +11,14 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="/documents/sections">Seções</a></li>
+<!--         <li class="active"><a href="#">1. Introdução</a></li>
+        <li><a href="#about">2. Referencial Estratégico</a></li>
+        <li><a href="#contact">3. Infraestrutura</a></li>
+        <li><a href="#contact">4. Resultados</a></li>
+        <li><a href="#contact">5. Ações</a></li>
+        <li><a href="#contact">6. Metas</a></li>
+        <li><a href="#contact">7. Conclusão</a></li> -->
       </ul>
 
       <form class="navbar-form navbar-right" role="search">
