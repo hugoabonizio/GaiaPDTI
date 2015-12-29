@@ -5,6 +5,8 @@
   
   ['GET', '/organizations/select', 'organizations#select'],
   ['RESOURCES', 'organizations'],
+  
+  ['GET', '/documents/sections', 'documents#sections'],
   ['RESOURCES', 'documents'],
   ['RESOURCES', 'users']
 ]);

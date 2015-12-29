@@ -11,7 +11,7 @@
     <?php foreach ($documents as $document): ?>
       <tr>
         <td class="col-md-8">
-          <a href="/documents/<?= $organization->id; ?>">
+          <a href="/documents/<?= $document->id; ?>">
             <?= $document->name; ?> (<?= $document->year; ?>)
           </a>
         </td>
