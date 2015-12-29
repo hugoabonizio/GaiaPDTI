@@ -1,0 +1,18 @@
+/* ol { counter-reset: item; padding-left: 10px; }
+li { display: block }
+li:before { content: counters(item, ".") " "; counter-increment: item } */
+
+.pdti-sections a {
+  color: #333;
+}
+.pdti-sections a:hover {
+  text-decoration: none;
+}
+
+.pdti-sections h5 {
+  margin-left: 20px;
+}
+
+.pdti-sections h4 {
+  border-bottom: 1px solid #ddd;
+}
