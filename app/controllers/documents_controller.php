@@ -4,7 +4,7 @@ class DocumentsController extends ApplicationController {
     parent::before_action();
     $this->layout('default');
     $this->sections = [
-      'intro' => [
+      'introduction' => [
         'intro' => 'Introdução', 
         'desc' => 'Descrição sucinta do Município',
         'desc' => 'Descrição sucinta do Município',
@@ -48,13 +48,13 @@ class DocumentsController extends ApplicationController {
   }
   
   function edit() {
-    $valids = [
-      'intro' => ['intro', 'desc', 'estru']
-    ];
     $this->section = $this->params('sec');
     $this->subsection = $this->params('sub');
+    extract((array) $this);
     
-    if (in_array($this->section, array_keys($valids)) and in_array($this->subsection, $valids[$section])) {
+    echo print($subsection);
+    if (in_array($section, array_keys($this->sections)) and in_array($subsection, array_keys($this->sections[$section]))) {
+      $this->content = Document::find($_SESSION['document_id'])->$section->$subsection;
       $this->name = $section;
     }
     $this->layout('application');
