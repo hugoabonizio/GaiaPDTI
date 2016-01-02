@@ -1,4 +1,4 @@
-<div class="pdti-sections" style="margin: 0 auto;">
+<div class="pdti-sections col-lg-7" style="float: none; margin: 0 auto;">
 <?php
 $count = 0;
 foreach (array_keys($sections) as $section) {
@@ -6,7 +6,11 @@ foreach (array_keys($sections) as $section) {
   $count = floor($count) + 1;
   foreach ($sections[$section] as $sub=>$name) {
   ?>
-  <h<?=ceil($h)?>><a href="<?= url_for('edit', 'documents', $_SESSION['document_id']);?>?sec=<?=$section?>&sub=<?=$sub?>"><?=$count?> <?=$name?></a></h<?=ceil($h)?>>
+  <h<?= ceil($h) ?>>
+    <a href="<?= url_for('edit', 'documents', $_SESSION['document_id']) ?>?sec=<?= $section ?>&sub=<?= $sub ?>">
+      <?= $count ?> <?= $name ?>
+    </a>
+  </h<?= ceil($h) ?>>
   <?php
     $count += 0.1;
     $h += 0.1;
