@@ -52,16 +52,30 @@ class DocumentsController extends ApplicationController {
     $this->subsection = $this->params('sub');
     extract((array) $this);
     
-    echo print($subsection);
-    if (in_array($section, array_keys($this->sections)) and in_array($subsection, array_keys($this->sections[$section]))) {
+    if ($this->valid_section($section, $subsection)) {
       $this->content = Document::find($_SESSION['document_id'])->$section->$subsection;
       $this->name = $section;
     }
     $this->layout('application');
   }
   
+  function update() {
+    if ($this->valid_section($this->params('section'), $this->params('subsection'))) {
+      $section = $this->params('section');
+      $subsection = $this->params('subsection');
+      $model = Document::find($_SESSION['document_id'])->$section;
+      $model->$subsection = $this->params('content');
+      $model->save();
+    }
+    $this->redirect('/documents/sections');
+  }
+  
   function sections() {
     $this->layout('application');
+  }
+  
+  private function valid_section($section, $subsection) {
+    return in_array($section, array_keys($this->sections)) and in_array($subsection, array_keys($this->sections[$section]));
   }
   
 }
