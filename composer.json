@@ -1,6 +1,7 @@
 {
   "require": {
     "hugoabonizio/birds": "dev-master",
-    "taq/torm": ">=1.0.0"
+    "taq/torm": ">=1.0.0",
+    "dompdf/dompdf" : "0.6.*"
   }
 }
