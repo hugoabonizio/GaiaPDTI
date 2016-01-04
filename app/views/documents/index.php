@@ -19,8 +19,8 @@
           <a class="btn btn-default btn-success" href="/documents/<?= $document->id; ?>">
             <i class="glyphicon glyphicon-share"></i> Entrar
           </a>
-          <a class="btn btn-default btn-warning" href="/documents/<?= $document->id; ?>/edit">
-            <i class="glyphicon glyphicon-edit"></i> Editar
+          <a class="btn btn-default btn-warning" href="/documents/<?= $document->id; ?>/options">
+            <i class="glyphicon glyphicon-edit"></i> Opções
           </a>
           <a class="btn btn-default btn-danger" href="/documents/<?= $document->id; ?>/destroy">
             <i class="glyphicon glyphicon-remove"></i> Remover

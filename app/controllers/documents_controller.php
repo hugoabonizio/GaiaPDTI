@@ -53,6 +53,25 @@ class DocumentsController extends ApplicationController {
     $this->redirect('/documents/sections');
   }
   
+  function options() {
+    $this->document = Document::find($_SESSION['document_id']);
+  }
+  
+  function change() {
+    $document = Document::find($_SESSION['document_id']);
+    if (!empty($_FILES)) {
+      $basename = basename($_FILES['logo']['name']);
+      $uploaded_name = uniqid(rand(), true) . $basename;
+      move_uploaded_file($_FILES['logo']['tmp_name'], 'public/uploads/' . $uploaded_name);
+      $document->logo = $uploaded_name;
+    }
+    $document->name = $this->params('name');
+    $document->year = $this->params('year');
+    $document->save();
+    $this->flash('result', 'Atualizado com sucesso!');
+    $this->redirect('/documents/' . $_SESSION['document_id'] . '/options');
+  }
+  
   function sections() {
     $this->layout('application');
   }
