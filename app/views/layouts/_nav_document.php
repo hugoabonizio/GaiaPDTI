@@ -22,9 +22,9 @@
       </ul>
 
       <form class="navbar-form navbar-right" role="search">
-        <button type="button" class="btn btn-danger">
+        <a href="/render" class="btn btn-danger">
           <span class="glyphicon glyphicon glyphicon-save"></span> Gerar PDF
-        </button>
+        </a>
       </form>
     </div><!--/.nav-collapse -->
   </div>
