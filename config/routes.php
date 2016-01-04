@@ -8,5 +8,7 @@
   
   ['GET', '/documents/sections', 'documents#sections'],
   ['RESOURCES', 'documents'],
-  ['RESOURCES', 'users']
+  ['RESOURCES', 'users'],
+  
+  ['GET', '/render', 'render#render']
 ]);
