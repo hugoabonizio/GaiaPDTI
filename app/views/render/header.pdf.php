@@ -8,11 +8,12 @@
       @page {
         margin: 2cm;
       }
-
+      
       body {
         font-family: sans-serif;
         margin: 0.5cm 0;
         text-align: justify;
+        counter-reset: page -1;
       }
 
       #header,
@@ -26,12 +27,12 @@
 
       #header {
         top: 0;
-        border-bottom: 0.1pt solid #aaa;
+/*         border-bottom: 0.1pt solid #aaa; */
       }
 
       #footer {
         bottom: 0;
-        border-top: 0.1pt solid #aaa;
+/*         border-top: 0.1pt solid #aaa; */
       }
 
       #header table,
@@ -48,11 +49,12 @@
       }
 
       .page-number {
-        text-align: center;
+        text-align: right;
       }
 
       .page-number:before {
-        content: "Pagina " counter(page);
+/*         content: "Pagina " counter(page); */
+        content: counter(page);
       }
 
       hr {
@@ -62,6 +64,10 @@
       #cover {
         page-break-after: always;
         text-align: center;
+      }
+      
+      #doc-content {
+        counter-reset: page;
       }
     </style>
   </head>

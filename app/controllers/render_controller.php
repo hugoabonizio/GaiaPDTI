@@ -11,16 +11,18 @@ class RenderController extends ApplicationController {
       <img src="public/uploads/' . $document->logo . '">
       <h1>' . "Plano Diretor de Tecnologia da Informação da Prefeitura Municipal de Guaraci" .'</h1>
       <h3>LONDRINA - PR</h3>
-      <h3> ' . $document->year . '</h3>
+      <h3>' . $document->year . '</h3>
     </div>';
     $html .= file_get_contents('app/views/render/logos.pdf.php');
     foreach ($this->sections as $section => $subs) {
       $model = Document::find($_SESSION['document_id'])->$section();
+      $counter = 1;
       foreach ($subs as $label => $name) {
-        $html .= "<h1>$name</h1><h3>" . $model->$label . "</h3>";
+        $html .= '<h1>' . $counter . " $name</h1><h3>" . $model->$label . "</h3>";
+        $counter += 0.1;
       }
     }
-    $html .= '</body></html>';
+    $html .= '</div></body></html>';
     
     $dompdf = new DOMPDF();
     $dompdf->load_html($html);
