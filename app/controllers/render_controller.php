@@ -18,7 +18,7 @@ class RenderController extends ApplicationController {
       $model = Document::find($_SESSION['document_id'])->$section();
       $counter = 1;
       foreach ($subs as $label => $name) {
-        $html .= '<h1>' . $counter . " $name</h1><h3>" . $model->$label . "</h3>";
+        $html .= '<h2>' . $counter . " $name</h2><p>" . $model->$label . "</p>";
         $counter += 0.1;
       }
     }
