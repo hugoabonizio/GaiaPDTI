@@ -11,7 +11,22 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="/documents/sections">Seções</a></li>
+        <li><a href="/documents/sections">Documento</a></li>
+        <li>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reuniões <i class="caret"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="/documents/<?= $_SESSION['document_id'] ?>/meetings">Listar</a></li>
+            <li><a href="/documents/<?= $_SESSION['document_id'] ?>/meetings/add">Novo</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Orgãos <i class="caret"></i>
+          <ul class="dropdown-menu">
+            <li><a href="/documents/<?= $_SESSION['document_id'] ?>/organs">Listar</a></li>
+            <li><a href="/documents/<?= $_SESSION['document_id'] ?>/organs/add">Novo</a></li>
+          </ul>
+        </li>
+        <li><a href="/documents/sections">Opções</a></li>
 <!--         <li class="active"><a href="#">1. Introdução</a></li>
         <li><a href="#about">2. Referencial Estratégico</a></li>
         <li><a href="#contact">3. Infraestrutura</a></li>

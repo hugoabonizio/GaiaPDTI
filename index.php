@@ -7,4 +7,4 @@ TORM\Connection::setDriver("sqlite");
 
 $app = new \Framework\Initializer();
 $app->public_folder = dirname(__FILE__) . '/public/';
-$app->run();
+$app->run($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);

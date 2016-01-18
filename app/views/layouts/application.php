@@ -3,8 +3,8 @@
     <meta charset="utf-8">
     <title>GAIA PDTI</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/public/css/gaia_theme.css">
-    <link rel="stylesheet" href="/public/css/pdti.css">
+    <link rel="stylesheet" href="<?= $url_prefix ?>/public/css/gaia_theme.css">
+    <link rel="stylesheet" href="<?= $url_prefix ?>/public/css/pdti.css">
     
     <link rel="stylesheet" href="/public/css/bootstrap-wysihtml5.css">
     <link rel="stylesheet" href="/public/css/pdti.css">
