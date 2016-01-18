@@ -20,11 +20,11 @@
       <?= $yield; ?>
     </div>
     
-    <script src="/public/js/jquery.min.js"></script>
-    <script src="/public/js/bootstrap.min.js"></script>
+    <script src="<?= $url_prefix ?>/public/js/jquery.min.js"></script>
+    <script src="<?= $url_prefix ?>/public/js/bootstrap.min.js"></script>
     
-    <script src="/public/js/wysihtml5-0.3.0.js"></script>
-    <script src="/public/js/bootstrap3-wysihtml5.js"></script>
+    <script src="<?= $url_prefix ?>/public/js/wysihtml5-0.3.0.js"></script>
+    <script src="<?= $url_prefix ?>/public/js/bootstrap3-wysihtml5.js"></script>
     
     <script>
       $('.textarea').wysihtml5();
