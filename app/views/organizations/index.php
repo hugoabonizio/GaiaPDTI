@@ -9,20 +9,14 @@
     </thead>
     <?php foreach ($organizations as $organization): ?>
       <tr>
-        <td class="col-md-8">
+        <td class="col-md-10">
           <a href="/organizations/select?organization_id=<?= $organization->id; ?>">
             <?= $organization->name; ?>
           </a>
         </td>
-        <td class="col-md-4">
+        <td class="col-md-2">
           <a class="btn btn-default btn-success" href="/organizations/select?organization_id=<?= $organization->id; ?>">
             <i class="glyphicon glyphicon-share"></i> Entrar
-          </a>
-          <a class="btn btn-default btn-warning" href="/organization/<?= $organization->id; ?>/edit">
-            <i class="glyphicon glyphicon-edit"></i> Editar
-          </a>
-          <a class="btn btn-default btn-danger" href="/organization/<?= $organization->id; ?>/destroy">
-            <i class="glyphicon glyphicon-remove"></i> Remover
           </a>
         </td>
       </tr>

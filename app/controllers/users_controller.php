@@ -34,6 +34,8 @@ class UsersController extends AuthenticateController {
   }
   
   function destroy() {
-    
+    $user = User::find($this->params('id'));
+    $user->destroy();
+    $this->redirect('/users');
   }
 }

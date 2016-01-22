@@ -6,6 +6,7 @@ class DocumentsController extends ApplicationController {
   }
   
   function index() {
+    $this->layout('default');
     $this->documents = Organization::find($_SESSION['organization_id'])->documents;
   }
   
@@ -54,7 +55,7 @@ class DocumentsController extends ApplicationController {
   }
   
   function options() {
-    $this->document = Document::find($_SESSION['document_id']);
+    $this->document = Document::find($this->params('id'));
   }
   
   function change() {

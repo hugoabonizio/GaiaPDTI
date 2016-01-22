@@ -6,7 +6,6 @@ class OrganizationsController extends AuthenticateController {
   }
   
   function index() {
-//     $this->organizations = array(0 => User::find($_SESSION['user_id'])->organization);
     $this->organizations = Organization::all();
   }
   

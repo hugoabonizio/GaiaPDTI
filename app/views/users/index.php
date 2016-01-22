@@ -17,12 +17,21 @@
           <?= $user->organization->name; ?>
         </td>
         <td class="col-md-3">
-          <a class="btn btn-default btn-warning" href="/organization/id/edit">
-            <i class="glyphicon glyphicon-edit"></i> Editar
-          </a>
-          <a class="btn btn-default btn-danger" href="/organization/id/destroy">
-            <i class="glyphicon glyphicon-remove"></i> Remover
-          </a>
+          <div class="row">
+            <div class="col-md-6">
+              <a class="btn btn-default btn-warning" href="/organization/id/edit">
+                <i class="glyphicon glyphicon-edit"></i> Editar
+              </a>
+            </div>
+
+            <div class="col-md-6">
+              <form action="<?= url('/users/:id/destroy', [$user->id]) ?>" method="post" style="margin-bottom:0px;width:0px;">
+                <button type="submit" class="btn btn-default btn-danger">
+                  <i class="glyphicon glyphicon-remove"></i> Remover
+                </button>
+              </form>
+            </div>
+          </div>
         </td>
       </tr>
     <?php endforeach; ?>

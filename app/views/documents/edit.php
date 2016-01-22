@@ -1,6 +1,6 @@
 <div class="pdti-sections" style="margin: 0 auto;">
   <h1><?= $sections[$section][$subsection] ?></h1>
-  <form action="<?= url_for('update', 'documents', $_SESSION['document_id']) ?>" method="post">
+  <form action="<?= url('/documents/:id/update', [$_SESSION['document_id']]) ?>" method="post">
     <input type="hidden" name="section" value="<?= $section ?>">
     <input type="hidden" name="subsection" value="<?= $subsection ?>">
     <div class="form-group">
