@@ -13,7 +13,7 @@
     <?php foreach ($documents as $document): ?>
       <tr>
         <td class="col-md-8">
-          <?= link_to($document, $document->name . '(' . $document->year . ')') ?>
+          <?= link_to($document, $document->name . ' (' . $document->year . ')') ?>
         </td>
         <td class="col-md-4">
           <?= link_to($document, '<i class="glyphicon glyphicon-share"></i> Entrar', ['class' => 'btn btn-default btn-success']) ?>

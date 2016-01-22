@@ -7,7 +7,7 @@ class DocumentsController extends ApplicationController {
   
   function index() {
     $this->layout('default');
-    $this->documents = Organization::find($_SESSION['organization_id'])->documents;
+    $this->documents = Organization::find($_SESSION['organization_id'])->documents;   
   }
   
   function add() {
@@ -29,6 +29,7 @@ class DocumentsController extends ApplicationController {
     $this->layout('application');
     $_SESSION['document_id'] = $this->params('id');
     $this->document = Document::find($this->params('id'));
+    $this->redirect('/documents/sections');
   }
   
   function edit() {
