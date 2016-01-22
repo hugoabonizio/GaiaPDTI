@@ -1,5 +1,5 @@
 <?php
-class DocumentsController extends ApplicationController {
+class DocumentsController extends AuthenticateController {
   function before_action() {
     parent::before_action();
     $this->layout('default');

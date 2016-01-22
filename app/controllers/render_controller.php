@@ -2,7 +2,7 @@
 define('DOMPDF_ENABLE_AUTOLOAD', false);
 require_once 'vendor/dompdf/dompdf/dompdf_config.inc.php';
 
-class RenderController extends ApplicationController {
+class RenderController extends AuthenticateController {
   function render() {
     $document = Document::find($_SESSION['document_id']);
     

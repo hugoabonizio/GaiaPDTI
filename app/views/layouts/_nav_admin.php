@@ -9,13 +9,13 @@
       </button>
       <a class="navbar-brand" href="<?= url('/') ?>"><strong>Gaia PDTI</strong></a>
     </div>
-    <?php //if (isset($current_user) and $current_user->is_admin): ?>
+    <?php if (isset($current_user)): ?>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li><?= link_to('/organizations', 'Organizações') ?></li>
           <li><?= link_to('/users', 'Usuários') ?></li>
         </ul>
       </div><!--/.nav-collapse -->
-    <?php //endif; ?>
+    <?php endif; ?>
   </div>
 </nav>
