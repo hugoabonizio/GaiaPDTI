@@ -29,7 +29,7 @@ class DocumentsController extends AuthenticateController {
     $this->layout('application');
     $_SESSION['document_id'] = $this->params('id');
     $this->document = Document::find($this->params('id'));
-    $this->redirect('/documents/sections');
+//     $this->redirect('/documents/sections');
   }
   
   function edit() {
