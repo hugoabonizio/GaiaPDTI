@@ -13,9 +13,31 @@ class OrgansController extends AuthenticateController {
     $organ->description = $this->params('description');
     $organ->document_id = $this->session('document_id');
     if ($organ->save()) {
-      $this->redirect('/documents/' . $this->session('document_id') . '/organs', 'Criado com sucesso!');
+      $this->redirect('/documents/' . $this->session('document_id') . '/organs', 'Salvo com sucesso!');
     } else {
-      $this->redirect('/documents/' . $this->session('document_id') . '/organs', 'Falha na criação!');
+      $this->redirect('/documents/' . $this->session('document_id') . '/organs', 'Ocorreu algum erro.');
     }
+  }
+  
+  function edit() {
+    $this->organ = Organ::find($this->params('organ_id'));
+  }
+  
+  function update() {
+    $organ = Organ::find($this->params('organ_id'));
+    $organ->name = $this->params('name');
+    $organ->description = $this->params('description');
+    $organ->document_id = $this->session('document_id');
+    if ($organ->save()) {
+      $this->redirect('/documents/' . $this->session('document_id') . '/organs', 'Salvo com sucesso!');
+    } else {
+      $this->redirect('/documents/' . $this->session('document_id') . '/organs', 'Ocorreu algum erro.');
+    }
+  }
+  
+  function destroy() {
+    $organ = Organ::find($this->params('organ_id'));
+    $organ->destroy();
+    $this->redirect('/documents/' . $_SESSION['document_id'] . '/organs');
   }
 }

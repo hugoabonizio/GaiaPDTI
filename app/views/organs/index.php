@@ -8,25 +8,32 @@
         <th>Ação</th>
       </tr>
     </thead>
-    <?php foreach ($organs as $document): ?>
+    <?php foreach ($organs as $organ): ?>
       <tr>
         <td class="col-md-8">
-          <a href="/documents/<?= $document->id; ?>">
-            <?= $document->name; ?> (<?= $document->year; ?>)
-          </a>
+          <?= link_to('/documents/' . $_SESSION['document_id'] . '/organs/' . $organ->id, $organ->name) ?>
         </td>
         <td class="col-md-4">
-          <a class="btn btn-default btn-success" href="/documents/<?= $document->id; ?>">
-            <i class="glyphicon glyphicon-share"></i> Entrar
-          </a>
-          <a class="btn btn-default btn-warning" href="/documents/<?= $document->id; ?>/options">
-            <i class="glyphicon glyphicon-edit"></i> Opções
-          </a>
-          <a class="btn btn-default btn-danger" href="/documents/<?= $document->id; ?>/destroy">
-            <i class="glyphicon glyphicon-remove"></i> Remover
-          </a>
+          <div class="row">
+            <div class="col-md-6">
+              <?= link_to('/documents/' . $_SESSION['document_id'] . '/organs/' . $organ->id, '<i class="glyphicon glyphicon-edit"></i> Editar', ['class' => 'btn btn-default btn-warning']) ?>
+            </div>
+            <div class="col-md-6">
+              <form action="<?= url('/documents/:id/organs/:organ_id/destroy', [$_SESSION['document_id'], $organ->id]) ?>" method="post">
+                <button type="submit" class="btn btn-default btn-danger">
+                  <i class="glyphicon glyphicon-remove"></i> Remover
+                </button>
+              </form>
+            </div>
+          </div>
         </td>
       </tr>
     <?php endforeach; ?>
   </table>
+
+  <div class="row">
+    <div class="col-md-12">
+      <?= link_to('/documents/' . $_SESSION['document_id'] . '/organs/add', '<i class="glyphicon glyphicon-plus"></i>', ['class' => 'btn btn-primary btn-lg pull-right']) ?>
+    </div>
+  </div>
 <?php endif; ?>

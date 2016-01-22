@@ -25,7 +25,7 @@
             </div>
 
             <div class="col-md-6">
-              <form action="<?= url('/users/:id/destroy', [$user->id]) ?>" method="post" style="margin-bottom:0px;width:0px;">
+              <form action="<?= url('/users/:id/destroy', [$user->id]) ?>" method="post">
                 <button type="submit" class="btn btn-default btn-danger">
                   <i class="glyphicon glyphicon-remove"></i> Remover
                 </button>

@@ -13,6 +13,9 @@
   ['GET', '/documents/:id/organs', 'organs#index'],
   ['GET', '/documents/:id/organs/add', 'organs#add'],
   ['POST', '/documents/:id/organs', 'organs#create'],
+  ['GET', '/documents/:id/organs/:organ_id', 'organs#edit'],
+  ['POST', '/documents/:id/organs/:organ_id', 'organs#update'],
+  ['POST', '/documents/:id/organs/:organ_id/destroy', 'organs#destroy'],
   
   ['RESOURCES', 'documents'],
   ['RESOURCES', 'users'],
