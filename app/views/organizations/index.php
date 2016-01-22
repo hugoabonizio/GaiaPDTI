@@ -10,14 +10,10 @@
     <?php foreach ($organizations as $organization): ?>
       <tr>
         <td class="col-md-10">
-          <a href="/organizations/select?organization_id=<?= $organization->id; ?>">
-            <?= $organization->name; ?>
-          </a>
+          <?= link_to('/organizations/select?organization_id=' . $organization->id, $organization->name) ?>
         </td>
         <td class="col-md-2">
-          <a class="btn btn-default btn-success" href="/organizations/select?organization_id=<?= $organization->id; ?>">
-            <i class="glyphicon glyphicon-share"></i> Entrar
-          </a>
+          <?= link_to('/organizations/select?organization_id=' . $organization->id, '<i class="glyphicon glyphicon-share"></i> Entrar', ['class' => 'btn btn-default btn-success']) ?>
         </td>
       </tr>
     <?php endforeach; ?>
@@ -25,9 +21,7 @@
   
   <div class="row">
     <div class="col-md-12">
-      <a href="/organizations/add" class="btn btn-primary btn-lg pull-right">
-        <i class="glyphicon glyphicon-plus"></i>
-      </a>
+      <?= link_to('/organizations/add', '<i class="glyphicon glyphicon-plus"></i>', ['class' => 'btn btn-primary btn-lg pull-right']) ?>
     </div>
   </div>
 </div>

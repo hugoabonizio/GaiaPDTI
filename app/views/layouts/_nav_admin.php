@@ -7,13 +7,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"><strong>Gaia PDTI</strong></a>
+      <a class="navbar-brand" href="<?= url('/') ?>"><strong>Gaia PDTI</strong></a>
     </div>
     <?php //if (isset($current_user) and $current_user->is_admin): ?>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a href="/organizations">Organizações</a></li>
-          <li><a href="/users">Usuários</a></li>
+          <li><?= link_to('/organizations', 'Organizações') ?></li>
+          <li><?= link_to('/users', 'Usuários') ?></li>
         </ul>
       </div><!--/.nav-collapse -->
     <?php //endif; ?>

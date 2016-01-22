@@ -39,9 +39,7 @@
   
   <div class="row">
     <div class="col-md-12">
-      <a href="/users/add" class="btn btn-primary btn-lg pull-right">
-        <i class="glyphicon glyphicon-plus"></i>
-      </a>
+      <?= link_to('/users/add', '<i class="glyphicon glyphicon-plus"></i>', ['class' => 'btn btn-primary btn-lg pull-right']) ?>
     </div>
   </div>
 </div>

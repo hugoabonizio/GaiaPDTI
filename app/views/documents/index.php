@@ -13,17 +13,11 @@
     <?php foreach ($documents as $document): ?>
       <tr>
         <td class="col-md-8">
-          <a href="/documents/<?= $document->id; ?>">
-            <?= $document->name; ?> (<?= $document->year; ?>)
-          </a>
+          <?= link_to($document, $document->name . '(' . $document->year . ')') ?>
         </td>
         <td class="col-md-4">
-          <a class="btn btn-default btn-success" href="/documents/<?= $document->id; ?>">
-            <i class="glyphicon glyphicon-share"></i> Entrar
-          </a>
-          <a class="btn btn-default btn-warning" href="/documents/<?= $document->id; ?>/options">
-            <i class="glyphicon glyphicon-edit"></i> Opções
-          </a>
+          <?= link_to($document, '<i class="glyphicon glyphicon-share"></i> Entrar', ['class' => 'btn btn-default btn-success']) ?>
+          <?= link_to('/documents/' . $document->id . '/options', '<i class="glyphicon glyphicon-edit"></i> Opções', ['class' => 'btn btn-default btn-warning']) ?>
         </td>
       </tr>
     <?php endforeach; ?>

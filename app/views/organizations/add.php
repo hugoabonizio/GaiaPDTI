@@ -1,4 +1,4 @@
-<form action="/organizations" method="post">
+<form action="<?= url('/organizations') ?>" method="post">
   <div class="form-group">
     <label for="exampleInputEmail1">Nome</label>
     <input type="text" class="form-control" name="name" placeholder="Nome">
