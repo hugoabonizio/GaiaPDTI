@@ -17,6 +17,13 @@
   ['POST', '/documents/:id/organs/:organ_id', 'organs#update'],
   ['POST', '/documents/:id/organs/:organ_id/destroy', 'organs#destroy'],
   
+  ['GET', '/documents/:id/meetings', 'meetings#index'],
+  ['GET', '/documents/:id/meetings/add', 'meetings#add'],
+  ['POST', '/documents/:id/meetings', 'meetings#create'],
+  ['GET', '/documents/:id/meetings/:meeting_id', 'meetings#edit'],
+  ['POST', '/documents/:id/meetings/:meeting_id', 'meetings#update'],
+  ['POST', '/documents/:id/meetings/:meeting_id/destroy', 'meetings#destroy'],
+  
   ['RESOURCES', 'documents'],
   ['RESOURCES', 'users'],
   

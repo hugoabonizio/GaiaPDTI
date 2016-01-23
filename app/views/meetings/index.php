@@ -1,6 +1,6 @@
-<?php if ($organs->count() == 0): ?>
+<?php if ($meetings->count() == 0): ?>
   <div class="alert alert-warning">
-    <h3>Não há orgãos cadastrados ainda</h3>
+    <h3>Não há reuniões cadastradas ainda, <?= link_to('/documents/' . $_SESSION['document_id'] . '/meetings/add', 'clique aqui') ?> para criar</h3>
   </div>
 <?php else: ?>
   <table class="table table-striped table-bordered">
@@ -10,7 +10,7 @@
         <th>Ação</th>
       </tr>
     </thead>
-    <?php foreach ($organs as $organ): ?>
+    <?php foreach ($meetings as $organ): ?>
       <tr>
         <td class="col-md-8">
           <?= link_to('/documents/' . $_SESSION['document_id'] . '/organs/' . $organ->id, $organ->name) ?>
