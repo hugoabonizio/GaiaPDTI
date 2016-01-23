@@ -60,8 +60,9 @@ class DocumentsController extends AuthenticateController {
   }
   
   function change() {
-    $document = Document::find($_SESSION['document_id']);
-    if (!empty($_FILES)) {
+    $document_id = $this->params('id');
+    $document = Document::find($document_id);
+    if (!empty($_FILES) and $_FILES['logo']['error'] == 0) {
       $basename = basename($_FILES['logo']['name']);
       $uploaded_name = uniqid(rand(), true) . $basename;
       move_uploaded_file($_FILES['logo']['tmp_name'], 'public/uploads/' . $uploaded_name);
@@ -71,7 +72,7 @@ class DocumentsController extends AuthenticateController {
     $document->year = $this->params('year');
     $document->save();
     $this->flash('result', 'Atualizado com sucesso!');
-    $this->redirect('/documents/' . $_SESSION['document_id'] . '/options');
+    $this->redirect("/documents/$document_id/options");
   }
   
   function sections() {
