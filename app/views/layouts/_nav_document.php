@@ -11,7 +11,7 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><?= link_to('/documents/sections', 'Documento') ?></li>
+        <li><?= link_to('/documents/sections', 'Seções do documento') ?></li>
         <li>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reuniões <i class="caret"></i></a>
           <ul class="dropdown-menu">
@@ -26,7 +26,7 @@
             <li><?= link_to('/documents/' . $_SESSION['document_id'] . '/organs/add', 'Novo') ?></li>
           </ul>
         </li>
-        <li><?= link_to('/documents/sections', 'Opções') ?></li>
+        <li><?= link_to('/documents/' . $_SESSION['document_id'] . '/options', 'Opções') ?></li>
 <!--         <li class="active"><a href="#">1. Introdução</a></li>
         <li><a href="#about">2. Referencial Estratégico</a></li>
         <li><a href="#contact">3. Infraestrutura</a></li>

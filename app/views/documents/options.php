@@ -21,6 +21,8 @@
       </div>
       <button type="submit" class="btn btn-success pull-right">Salvar</button>
     </form>
+    
+    <?= link_to('/documents/' . $document->id, '<i class="glyphicon glyphicon-chevron-left"></i> Voltar') ?>
   </div>
 </div>
 
