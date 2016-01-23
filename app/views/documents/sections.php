@@ -17,4 +17,5 @@ foreach (array_keys($sections) as $section) {
   }
 }
 ?>
+  <h6>&nbsp;</h6>
 </div>

@@ -38,7 +38,18 @@ class DocumentsController extends AuthenticateController {
     extract((array) $this);
     
     if ($this->valid_section($section, $subsection)) {
-      $this->content = Document::find($_SESSION['document_id'])->$section->$subsection;
+      if ($subsection == 'swot') {
+        $this->swot_sections = [
+          'swot_strengths' => 'Pontos Fortes',
+          'swot_weakness' => 'Pontos Fracos',
+          'swot_opportunities' => 'Oportunidades',
+          'swot_threats' => 'Ameaças'
+        ];
+        $this->content = Document::find($_SESSION['document_id'])->$section;
+        $this->render('swot');
+      } else {
+        $this->content = Document::find($_SESSION['document_id'])->$section->$subsection;
+      }
       $this->name = $section;
     }
     $this->layout('application');
@@ -49,7 +60,13 @@ class DocumentsController extends AuthenticateController {
       $section = $this->params('section');
       $subsection = $this->params('subsection');
       $model = Document::find($_SESSION['document_id'])->$section;
-      $model->$subsection = $this->params('content');
+      if ($subsection == 'swot') {
+        foreach (['swot_strengths', 'swot_weakness', 'swot_opportunities', 'swot_threats'] as $swot_section) {
+          $model->$swot_section = $this->params($swot_section);
+        }
+      } else {
+        $model->$subsection = $this->params('content');
+      }
       $model->save();
     }
     $this->redirect('/documents/sections');

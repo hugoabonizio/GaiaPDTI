@@ -24,13 +24,15 @@ li:before { content: counters(item, ".") " "; counter-increment: item } */
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
   border-top: 1px solid #e6e6e6;
   padding: 15px;
+  margin-bottom: 20px;
+  display: block;
 }
 
 .pdti-sections:before {
   content: '';
   position: absolute;
   right: 0;
-  bottom: 0px;
+  bottom: 0;
   left: 0;
   height: 50px;
   overflow: hidden;

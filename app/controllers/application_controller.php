@@ -10,12 +10,16 @@ class ApplicationController extends \Framework\ControllerBase {
         'metod' => 'Metodologia de Trabalho',
         'estrud' => 'Estrutura do Documento'
       ],
-      'ref' => [
+      'referential' => [
         'ref' => 'Referencial Estratégico de TI',
         'mis' => 'Missão',
         'vis' => 'Visão',
         'obj' => 'Objetivos Estratégicos de TIC',
         'swot' => 'Matriz SWOT da área de TIC'
+//           'swot_strenghts' => 'Matriz SWOT da área de TIC',
+//           'swot_weakness' => 'Matriz SWOT da área de TIC',
+//           'swot_opportunities' => 'Matriz SWOT da área de TIC',
+//           'swot_threats' => 'Matriz SWOT da área de TIC',
       ]
     ];
   }
