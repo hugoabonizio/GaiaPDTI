@@ -5,39 +5,47 @@ class MeetingsController extends AuthenticateController {
   }
   
   function add() {
+    $this->meeting = new Meeting;
+    $this->organs = Document::find($_SESSION['document_id'])->organs;
   }
   
   function create() {
-    $organ = new Organ;
-    $organ->name = $this->params('name');
-    $organ->description = $this->params('description');
-    $organ->document_id = $this->session('document_id');
-    if ($organ->save()) {
-      $this->redirect('/documents/' . $this->session('document_id') . '/organs', 'Salvo com sucesso!');
+    $meeting = new Meeting;
+    $meeting->m_date = $this->params('date') . ' ' . $this->params('time');
+    foreach (['local', 'participants', 'systems', 'infra', 'processes', 'people', 'organ_id'] as $field) {
+      $meeting->$field = $this->params($field);
+    }
+    $meeting->document_id = $this->session('document_id');
+    if ($meeting->save()) {
+      $this->redirect('/documents/' . $this->session('document_id') . '/meetings', 'Salvo com sucesso!');
     } else {
-      $this->redirect('/documents/' . $this->session('document_id') . '/organs', 'Ocorreu algum erro.');
+      $this->redirect('/documents/' . $this->session('document_id') . '/meetings', 'Ocorreu algum erro.');
     }
   }
   
   function edit() {
-    $this->organ = Organ::find($this->params('organ_id'));
+    $this->meeting = Meeting::find($this->params('meeting_id'));
+    $this->organs = Document::find($_SESSION['document_id'])->organs;
   }
   
   function update() {
-    $organ = Organ::find($this->params('organ_id'));
-    $organ->name = $this->params('name');
-    $organ->description = $this->params('description');
-    $organ->document_id = $this->session('document_id');
-    if ($organ->save()) {
-      $this->redirect('/documents/' . $this->session('document_id') . '/organs', 'Salvo com sucesso!');
+    $meeting = Meeting::find($this->params('meeting_id'));
+    $meeting->m_date = $this->params('date') . ' ' . $this->params('time');
+    print_r($this->params());
+    foreach (['local', 'participants', 'systems', 'infra', 'processes', 'people', 'organ_id'] as $field) {
+      $meeting->$field = $this->params($field);
+    }
+    $meeting->document_id = $this->session('document_id');
+    if ($meeting->save()) {
+      $this->redirect('/documents/' . $this->session('document_id') . '/meetings', 'Salvo com sucesso!');
     } else {
-      $this->redirect('/documents/' . $this->session('document_id') . '/organs', 'Ocorreu algum erro.');
+      $this->redirect('/documents/' . $this->session('document_id') . '/meetings', 'Ocorreu algum erro.');
     }
   }
   
   function destroy() {
-    $organ = Organ::find($this->params('organ_id'));
-    $organ->destroy();
-    $this->redirect('/documents/' . $_SESSION['document_id'] . '/organs');
+    $meeting = Meeting::find($this->params('meeting_id'));
+    $meeting->destroy();
+    $this->redirect('/documents/' . $_SESSION['document_id'] . '/meetings');
   }
 }

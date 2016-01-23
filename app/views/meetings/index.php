@@ -10,18 +10,18 @@
         <th>Ação</th>
       </tr>
     </thead>
-    <?php foreach ($meetings as $organ): ?>
+    <?php foreach ($meetings as $meeting): ?>
       <tr>
         <td class="col-md-8">
-          <?= link_to('/documents/' . $_SESSION['document_id'] . '/organs/' . $organ->id, $organ->name) ?>
+          <?= link_to('/documents/' . $_SESSION['document_id'] . '/meetings/' . $meeting->id, $meeting->m_date) ?>
         </td>
         <td class="col-md-4">
           <div class="row">
             <div class="col-md-6">
-              <?= link_to('/documents/' . $_SESSION['document_id'] . '/organs/' . $organ->id, '<i class="glyphicon glyphicon-edit"></i> Editar', ['class' => 'btn btn-default btn-warning']) ?>
+              <?= link_to('/documents/' . $_SESSION['document_id'] . '/meetings/' . $meeting->id, '<i class="glyphicon glyphicon-edit"></i> Editar', ['class' => 'btn btn-default btn-warning']) ?>
             </div>
             <div class="col-md-6">
-              <form action="<?= url('/documents/:id/organs/:organ_id/destroy', [$_SESSION['document_id'], $organ->id]) ?>" method="post">
+              <form action="<?= url('/documents/:id/meetings/:meeting_id/destroy', [$_SESSION['document_id'], $meeting->id]) ?>" method="post">
                 <button type="submit" class="btn btn-default btn-danger">
                   <i class="glyphicon glyphicon-remove"></i> Remover
                 </button>
@@ -35,7 +35,7 @@
 
   <div class="row">
     <div class="col-md-12">
-      <?= link_to('/documents/' . $_SESSION['document_id'] . '/organs/add', '<i class="glyphicon glyphicon-plus"></i>', ['class' => 'btn btn-primary btn-lg pull-right']) ?>
+      <?= link_to('/documents/' . $_SESSION['document_id'] . '/meetings/add', '<i class="glyphicon glyphicon-plus"></i>', ['class' => 'btn btn-primary btn-lg pull-right']) ?>
     </div>
   </div>
 <?php endif; ?>
