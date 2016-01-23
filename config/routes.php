@@ -2,6 +2,7 @@
 \Framework\Router::draw([
 	['GET', '/', 'session#login'],
   ['POST', '/', 'session#create'],
+  ['GET', '/logout', 'session#logout'],
   
   ['GET', '/organizations/select', 'organizations#select'],
   ['RESOURCES', 'organizations'],

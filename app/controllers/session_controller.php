@@ -1,10 +1,9 @@
 <?php
 class SessionController extends ApplicationController {
   function login() {
+    $this->layout('default');
     if (isset($_SESSION['signed_in'])) {
       $this->redirect('/organizations');
-    } else {
-      $this->layout('default');
     }
   }
   
@@ -19,6 +18,11 @@ class SessionController extends ApplicationController {
     } else {
       // error
     }
+    $this->redirect('/');
+  }
+  
+  function logout() {
+    session_destroy();
     $this->redirect('/');
   }
 }

@@ -15,6 +15,10 @@
           <li><?= link_to('/organizations', 'Organizações') ?></li>
           <li><?= link_to('/users', 'Usuários') ?></li>
         </ul>
+        
+        <ul class="nav navbar-right navbar-nav">
+          <li><?= link_to('/logout', 'Sair <i class="glyphicon glyphicon-log-out"></i>') ?></li>
+        </ul>
       </div><!--/.nav-collapse -->
     <?php endif; ?>
   </div>
