@@ -31,7 +31,6 @@ class MeetingsController extends AuthenticateController {
   function update() {
     $meeting = Meeting::find($this->params('meeting_id'));
     $meeting->m_date = $this->params('date') . ' ' . $this->params('time');
-    print_r($this->params());
     foreach (['local', 'participants', 'systems', 'infra', 'processes', 'people', 'organ_id'] as $field) {
       $meeting->$field = $this->params($field);
     }

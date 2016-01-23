@@ -6,14 +6,14 @@
   <table class="table table-striped table-bordered">
     <thead>
       <tr>
-        <th>Nome</th>
+        <th>Orgão / Data</th>
         <th>Ação</th>
       </tr>
     </thead>
     <?php foreach ($meetings as $meeting): ?>
       <tr>
         <td class="col-md-8">
-          <?= link_to('/documents/' . $_SESSION['document_id'] . '/meetings/' . $meeting->id, $meeting->m_date) ?>
+          <?= link_to('/documents/' . $_SESSION['document_id'] . '/meetings/' . $meeting->id, $meeting->organ->name . ' (' . @explode(' ', $meeting->m_date)[0] . ')') ?>
         </td>
         <td class="col-md-4">
           <div class="row">
