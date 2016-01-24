@@ -1,10 +1,11 @@
 <div class="container">  
-  <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div id="loginbox" style="margin-top: 10px; text-align:center" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">  
     <div class="panel panel-info" >
       <div class="panel-heading" style="background:#2B85C4">
         <div class="panel-title" style="color:white">Entrar</div>
       </div>
-      <div style="padding-top:30px" class="panel-body" >
+      <div style="padding-top:30px" class="panel-body">
+        <img src="http://gaia3.uel.br/images/artigos/prod_tecnica/plano_diretor_informatica.png" style="width: 100px; margin: 20px auto;">
         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
         <form method="post" action="<?= url('/'); ?>" class="form-horizontal" role="form">
