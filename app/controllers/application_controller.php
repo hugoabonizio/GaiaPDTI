@@ -14,13 +14,31 @@ class ApplicationController extends \Framework\ControllerBase {
         'ref' => 'Referencial Estratégico de TI',
         'mis' => 'Missão',
         'vis' => 'Visão',
-        'obj' => 'Objetivos Estratégicos de TIC',
-        'swot' => 'Matriz SWOT da área de TIC'
-//           'swot_strenghts' => 'Matriz SWOT da área de TIC',
-//           'swot_weakness' => 'Matriz SWOT da área de TIC',
-//           'swot_opportunities' => 'Matriz SWOT da área de TIC',
-//           'swot_threats' => 'Matriz SWOT da área de TIC',
+        'obj' => 'Objetivos Estratégicos de TI',
+        'swot' => 'Matriz SWOT da área de TI'
+      ],
+      'infra' => [
+        'infra' => 'Infraestrutura de TI da Prefeitura',
+        'net' => 'Redes de Comunicação de Dados',
+        'datacenter' => 'Data Center',
+        'server' => 'Servidores',
+        'station' => 'Estações de Trabalho',
+        'geren' => 'Gerencia de Redes e Serviços'
+      ],
+      'adddata' => [
+        'adddata' => 'Levantamento de Dados junto às Secretarias',
+        'sinte' => 'Síntese das Necessidades Identificadas e Análise das Prioridades'
+      ],
+      'action' => [
+        'action' => 'Ações para Atender às Necessidades'
+      ],
+      'rh' => [
+        'rh' => 'Quantitativo, qualificação e estruturação dos recursos humanos para atendimentos das metas estabelecidas'
+      ],
+      'conclusion' => [
+        'conclusion' => 'Conclusão'
       ]
+      
     ];
   }
   
