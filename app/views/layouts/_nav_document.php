@@ -11,16 +11,16 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><?= link_to('/', '<i class="fa fa-home"></i> Início') ?></li>
-        <li><?= link_to('/documents/sections', '<i class="fa fa-file-text"></i> Seções do documento') ?></li>
-        <li>
+        <li class="nav-home"><?= link_to('/', '<i class="fa fa-home"></i> Início') ?></li>
+        <li class="nav-document"><?= link_to('/documents/sections', '<i class="fa fa-file-text"></i> Seções do documento') ?></li>
+        <li class="nav-meeting">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-users"></i> Reuniões <i class="caret"></i></a>
           <ul class="dropdown-menu">
             <li><?= link_to('/documents/' . $_SESSION['document_id'] . '/meetings', '<i class="fa fa-list"></i> Listar') ?></li>
             <li><?= link_to('/documents/' . $_SESSION['document_id'] . '/meetings/add', '<i class="fa fa-plus"></i> Novo') ?></li>
           </ul>
         </li>
-        <li>
+        <li class="nav-organ">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sitemap"></i> Orgãos <i class="caret"></i>
           <ul class="dropdown-menu">
             <li><?= link_to('/documents/' . $_SESSION['document_id'] . '/organs', '<i class="fa fa-list"></i> Listar') ?></li>

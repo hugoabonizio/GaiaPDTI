@@ -34,6 +34,18 @@
     
     <script>
       $('.textarea').wysihtml5();
+      
+      var navs = ['document', 'meeting', 'organ', 'options'];
+      var found = false;
+      navs.forEach(function (i) {
+        console.log(i);
+        if (window.location.href.indexOf(i) > -1) {
+          $('.nav.navbar-nav > li').removeClass('active');
+          $('.nav-' + i).addClass('active');
+          found = true;
+        }
+      });
+      if (!found) $('.nav-home').addClass('active');
     </script>
   </body>
 </html>
