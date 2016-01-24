@@ -12,8 +12,8 @@
     <?php if (isset($current_user)): ?>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><?= link_to('/organizations', 'Organizações') ?></li>
-          <li><?= link_to('/users', 'Usuários') ?></li>
+          <li><?= link_to('/organizations', '<i class="fa fa-building"></i> Organizações') ?></li>
+          <li><?= link_to('/users', '<i class="fa fa-users"></i> Usuários') ?></li>
         </ul>
         
         <ul class="nav navbar-right navbar-nav">

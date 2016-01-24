@@ -11,22 +11,23 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><?= link_to('/documents/sections', 'Seções do documento') ?></li>
+        <li><?= link_to('/', '<i class="fa fa-home"></i> Início') ?></li>
+        <li><?= link_to('/documents/sections', '<i class="fa fa-file-text"></i> Seções do documento') ?></li>
         <li>
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reuniões <i class="caret"></i></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-users"></i> Reuniões <i class="caret"></i></a>
           <ul class="dropdown-menu">
-            <li><?= link_to('/documents/' . $_SESSION['document_id'] . '/meetings', 'Listar') ?></li>
-            <li><?= link_to('/documents/' . $_SESSION['document_id'] . '/meetings/add', 'Novo') ?></li>
+            <li><?= link_to('/documents/' . $_SESSION['document_id'] . '/meetings', '<i class="fa fa-list"></i> Listar') ?></li>
+            <li><?= link_to('/documents/' . $_SESSION['document_id'] . '/meetings/add', '<i class="fa fa-plus"></i> Novo') ?></li>
           </ul>
         </li>
         <li>
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Orgãos <i class="caret"></i>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sitemap"></i> Orgãos <i class="caret"></i>
           <ul class="dropdown-menu">
-            <li><?= link_to('/documents/' . $_SESSION['document_id'] . '/organs', 'Listar') ?></li>
-            <li><?= link_to('/documents/' . $_SESSION['document_id'] . '/organs/add', 'Novo') ?></li>
+            <li><?= link_to('/documents/' . $_SESSION['document_id'] . '/organs', '<i class="fa fa-list"></i> Listar') ?></li>
+            <li><?= link_to('/documents/' . $_SESSION['document_id'] . '/organs/add', '<i class="fa fa-plus"></i> Novo') ?></li>
           </ul>
         </li>
-        <li><?= link_to('/documents/' . $_SESSION['document_id'] . '/options', 'Opções') ?></li>
+        <li><?= link_to('/documents/' . $_SESSION['document_id'] . '/options', '<i class="fa fa-cogs"></i> Opções') ?></li>
 <!--         <li class="active"><a href="#">1. Introdução</a></li>
         <li><a href="#about">2. Referencial Estratégico</a></li>
         <li><a href="#contact">3. Infraestrutura</a></li>
