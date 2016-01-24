@@ -12,12 +12,12 @@
     <?php if (isset($current_user)): ?>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><?= link_to('/organizations', '<i class="fa fa-building"></i> Organizações') ?></li>
-          <li><?= link_to('/users', '<i class="fa fa-users"></i> Usuários') ?></li>
+          <li class="nav-organization"><?= link_to('/organizations', '<i class="fa fa-building"></i> Organizações') ?></li>
+          <li class="nav-user"><?= link_to('/users', '<i class="fa fa-users"></i> Usuários') ?></li>
         </ul>
         
         <ul class="nav navbar-right navbar-nav">
-          <li><?= link_to('/logout', 'Sair <i class="glyphicon glyphicon-log-out"></i>') ?></li>
+          <li><?= link_to('/logout', 'Sair <i class="fa fa-sign-out"></i>') ?></li>
         </ul>
       </div><!--/.nav-collapse -->
     <?php endif; ?>

@@ -23,5 +23,18 @@
     
     <script src="<?= url('/public/js/jquery.min.js') ?>"></script>
     <script src="<?= url('/public/js/bootstrap.min.js') ?>"></script>
+    
+    <script>
+      var navs = ['organization', 'user'];
+      var found = false;
+      navs.forEach(function (i) {
+        if (window.location.href.indexOf(i) > -1) {
+          $('.nav.navbar-nav > li').removeClass('active');
+          $('.nav-' + i).addClass('active');
+          found = true;
+        }
+      });
+      if (!found) $('.nav-home').addClass('active');
+    </script>
   </body>
 </html>
