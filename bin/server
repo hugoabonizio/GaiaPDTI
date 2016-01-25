@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-php -S 0.0.0.0:3000 index.php
+BIRDS_ENV=development php -S 0.0.0.0:3000 index.php

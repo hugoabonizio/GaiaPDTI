@@ -6,5 +6,10 @@ TORM\Connection::setConnection($con);
 TORM\Connection::setDriver("sqlite");
 
 $app = new \Framework\Initializer();
-$app->public_folder = dirname(__FILE__) . '/public/';
+if ($_ENV['BIRDS_ENV'] == 'development') {
+  $app->public_folder = dirname(__FILE__) . '/public/';
+} else {
+  \Framework\Application::$url_prefix = '/projetos/gaia-pdti/index.php';
+  if ($_SERVER['REQUEST_URI'] == '/projetos/gaia-pdti/') header('Location: ' . \Framework\Application::$url_prefix);
+}
 $app->run($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
