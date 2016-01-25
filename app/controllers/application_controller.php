@@ -38,7 +38,6 @@ class ApplicationController extends \Framework\ControllerBase {
       'conclusion' => [
         'conclusion' => 'Conclusão'
       ]
-      
     ];
   }
   

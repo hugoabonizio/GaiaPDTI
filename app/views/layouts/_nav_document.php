@@ -38,7 +38,7 @@
       </ul>
 
       <form class="navbar-form navbar-right" role="search">
-        <a href="<?= url('/render') ?>" class="btn btn-danger">
+        <a href="<?= url('/render') ?>" target="_blank" class="btn btn-danger">
           <span class="glyphicon glyphicon glyphicon-save"></span> Gerar PDF
         </a>
       </form>
