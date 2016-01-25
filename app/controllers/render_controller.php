@@ -14,12 +14,18 @@ class RenderController extends AuthenticateController {
       <h3>' . $document->year . '</h3>
     </div>';
     $html .= file_get_contents('app/views/render/logos.pdf.php');
+    $counter = 0;
     foreach ($this->sections as $section => $subs) {
       $model = Document::find($_SESSION['document_id'])->$section();
-      $counter = 1;
+      $counter = floor($counter) + 1;
       foreach ($subs as $label => $name) {
-        $html .= '<h2>' . $counter . " $name</h2><p>" . $model->$label . "</p>";
-        $counter += 0.1;
+        if ($label == 'swot') {
+          /* TODO */
+          $html .= '<h1>*matriz swot*</h1>';
+        } else {
+          $html .= '<h2>' . $counter . " $name</h2><p>" . $model->$label . "</p>";
+          $counter += 0.1;
+        }
       }
     }
     $html .= '</div></body></html>';
