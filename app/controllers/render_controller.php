@@ -16,7 +16,7 @@ class RenderController extends AuthenticateController {
     $html .= file_get_contents('app/views/render/logos.pdf.php');
     $counter = 0;
     foreach ($this->sections as $section => $subs) {
-      $model = Document::find($_SESSION['document_id'])->$section();
+      $model = Document::find($_SESSION['document_id'])->$section;
       $counter = floor($counter) + 1;
       foreach ($subs as $label => $name) {
         if ($label == 'swot') {
