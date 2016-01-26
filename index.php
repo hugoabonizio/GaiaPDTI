@@ -6,7 +6,7 @@ TORM\Connection::setConnection($con);
 TORM\Connection::setDriver("sqlite");
 
 $app = new \Framework\Initializer();
-if ($_ENV['BIRDS_ENV'] == 'development') {
+if (getenv('BIRDS_ENV') == 'development') {
   $app->public_folder = dirname(__FILE__) . '/public/';
 } else {
   \Framework\Application::$url_prefix = '/projetos/gaia-pdti/index.php';
