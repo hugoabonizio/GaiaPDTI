@@ -19,9 +19,7 @@
         <td class="col-md-3">
           <div class="row">
             <div class="col-md-6">
-              <a class="btn btn-default btn-warning" href="/organization/id/edit">
-                <i class="glyphicon glyphicon-edit"></i> Editar
-              </a>
+              <?= link_to('/users/' . $user->id . '/edit', '<i class="glyphicon glyphicon-edit"></i> Editar', ['class' => 'btn btn-default btn-warning']) ?>
             </div>
 
             <div class="col-md-6">
