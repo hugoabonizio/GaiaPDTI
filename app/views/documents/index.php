@@ -23,3 +23,9 @@
     <?php endforeach; ?>
   </table>
 <?php endif; ?>
+
+  <div class="row">
+    <div class="col-md-12">
+      <?= link_to('/documents/add', '<i class="glyphicon glyphicon-plus"></i>', ['class' => 'btn btn-primary btn-lg pull-right']) ?>
+    </div>
+  </div>
