@@ -1,6 +1,6 @@
 <div class="pdti-sections" style="margin: 0 auto;">
   <h1><?= $sections[$section][$subsection] ?></h1>
-  <form action="<?= url('/documents/:id') ?>" method="post">
+  <form action="<?= url('/documents') ?>" method="post">
     <div class="form-group">
       <div class="form-group">
         <label>Nome</label>
