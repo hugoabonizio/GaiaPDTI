@@ -19,9 +19,10 @@ class DocumentsController extends AuthenticateController {
     $document->name = $_POST['name'];
     $document->year = $_POST['year'];
     if ($document->save()) {
-      $this->redirect('/documents/' . $document->id);
+      $document->generate($this->sections);
+//       $this->redirect('/documents/' . $document->id);
     } else {
-      $this->redirect('/documents');
+//       $this->redirect('/documents');
     }
   }
   
@@ -70,6 +71,12 @@ class DocumentsController extends AuthenticateController {
       $model->save();
     }
     $this->redirect('/documents/sections');
+  }
+  
+  function destroy() {
+    foreach (array_keys($this->sections) as $section) {
+      $s = $section::where(['document_id' => $this->params('id')])->destroy();
+    }
   }
   
   function options() {
