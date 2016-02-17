@@ -16,8 +16,20 @@
           <?= link_to($document, $document->name . ' (' . $document->year . ')') ?>
         </td>
         <td class="col-md-4">
-          <?= link_to($document, '<i class="glyphicon glyphicon-share"></i> Entrar', ['class' => 'btn btn-default btn-success']) ?>
-          <?= link_to('/documents/' . $document->id . '/options', '<i class="glyphicon glyphicon-edit"></i> Opções', ['class' => 'btn btn-default btn-warning']) ?>
+          <div class="row">
+            <div class="col-md-4">
+              <?= link_to($document, '<i class="glyphicon glyphicon-share"></i> Entrar', ['class' => 'btn btn-default btn-success']) ?>
+            </div>
+            <div class="col-md-4">
+              <?= link_to('/documents/' . $document->id . '/options', '<i class="glyphicon glyphicon-edit"></i> Opções', ['class' => 'btn btn-default btn-warning']) ?>
+            </div>
+            <div class="col-md-4">
+              <form action="<?= url('/documents/:id/destroy', [$document->id]) ?>" method="post">
+                <button type="submit" class="btn btn-default btn-danger">
+                  <i class="glyphicon glyphicon-remove"></i> Remover
+                </button>
+              </form>
+            </div>
         </td>
       </tr>
     <?php endforeach; ?>

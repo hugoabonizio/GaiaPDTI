@@ -20,9 +20,9 @@ class DocumentsController extends AuthenticateController {
     $document->year = $_POST['year'];
     if ($document->save()) {
       $document->generate($this->sections);
-//       $this->redirect('/documents/' . $document->id);
+      $this->redirect('/documents/' . $document->id);
     } else {
-//       $this->redirect('/documents');
+      $this->redirect('/documents');
     }
   }
   
@@ -77,6 +77,8 @@ class DocumentsController extends AuthenticateController {
     foreach (array_keys($this->sections) as $section) {
       $s = $section::where(['document_id' => $this->params('id')])->destroy();
     }
+    Document::where(['id' => $this->params('id')])->destroy();
+    $this->redirect('/documents');
   }
   
   function options() {
