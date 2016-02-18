@@ -9,9 +9,11 @@ class RenderController extends AuthenticateController {
     $this->html = file_get_contents('app/views/render/header.pdf.php');
     $this->html .= '<div id="cover">
       <img src="public/uploads/' . $document->logo . '">
-      <h1>' . "Plano Diretor de Tecnologia da Informação da Prefeitura Municipal de Guaraci" .'</h1>
-      <h3>LONDRINA - PR</h3>
-      <h3>' . $document->year . '</h3>
+      <h1>' . $document->name .'</h1>
+      <div style="position: fixed; bottom: 50px;">
+        <h3>LONDRINA - PR</h3>
+        <h3>' . $document->year . '</h3>
+      </div>
     </div>';
     $this->html .= file_get_contents('app/views/render/logos.pdf.php');
     $counter = 0;

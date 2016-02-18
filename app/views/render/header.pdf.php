@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-    <title>Header and Footer example</title>
+    <title></title>
     <style type="text/css">
       @page {
         margin: 2cm;

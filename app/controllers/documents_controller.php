@@ -18,6 +18,7 @@ class DocumentsController extends AuthenticateController {
     $document->organization_id = $_SESSION['organization_id'];
     $document->name = $_POST['name'];
     $document->year = $_POST['year'];
+    $document->logo = '381554527568a0188078c34.22685210ibip.jpg';
     if ($document->save()) {
       $document->generate($this->sections);
       $this->redirect('/documents/' . $document->id);
